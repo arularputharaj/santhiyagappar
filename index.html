@@ -24,6 +24,7 @@
 <link href="css/revolution.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="css/settings.css" media="screen" />
 <link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/popup.css" type="text/css" />
 <link href="css/responsive.css" rel="stylesheet" type="text/css" />
 
 
@@ -808,9 +809,76 @@
 
 	</script>
 
+	<!-- =============================================
+       POPUP — HTML
+  ============================================== -->
 
+  <div id="popup-overlay" onclick="closePopupOnOverlay(event)">
+    <div class="popup-box">
+
+      <!-- Header -->
+      <div class="popup-header">
+        <button class="popup-close" onclick="closePopup()" title="Close">
+          <i class="fa fa-times"></i>
+        </button>
+        <span class="fa-cross-icon"><i class="fa fa-plus"></i></span>
+        <h3>
+          <span class="red">மறவபட்டி</span>
+          <span class="white">புனித சந்தியாகப்பர் திருத்தலம்</span>
+        </h3>
+      </div>
+
+      <!-- Red accent bar -->
+      <div class="popup-accent-bar"></div>
+
+      <!-- Body -->
+      <div class="popup-body">
+        <p class="desc">
+          ஒவ்வொரு வியாழக்கிழமையும் காலை 11 மணி மற்றும் மாலை
+          7.00 மணிக்கு புனித சந்தியாகப்பருக்கு நவநாள் செபமும்,
+          திருப்பலியும், நற்கருணை ஆசீர்வாதமும் நடைபெறும்.
+        </p>
+        <hr class="popup-divider"/>
+      </div>
+
+      <!-- Footer -->
+      <div class="popup-footer">
+        <p class="welcome">உங்களை அன்புடன் வரவேற்கிறோம்</p>
+        <p class="address">
+          புனித சந்தியாகப்பர் திருத்தலம்<br/>
+          மறவபட்டி, தாடிக்கொம்பு (வழி),<br/>
+          திண்டுக்கல் - 624 709, தமிழ்நாடு.
+        </p>
+        <button class="popup-btn" onclick="closePopup()">
+          <i class="fa fa-check"></i>&nbsp; சரி, புரிந்தது
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+<!-- Popup Script -->
+	  <script>
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        document.getElementById('popup-overlay').classList.add('active');
+      }, 1000);
+    });
+
+    function closePopup() {
+      document.getElementById('popup-overlay').classList.remove('active');
+    }
+
+    function closePopupOnOverlay(e) {
+      if (e.target === document.getElementById('popup-overlay')) {
+        closePopup();
+      }
+    }
+  </script>
+	
 
 </body>
+
 
 
 
